@@ -1,8 +1,8 @@
 'use strict';
 // Service worker: giúp app mở nhanh và mở được giao diện khi mất mạng.
 // Không cache /api, /ws và /files (dữ liệu chat luôn lấy từ máy chủ).
-const CACHE = 'zalo-lite-v1';
-const SHELL = ['/', '/app.js', '/style.css', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/apple-touch-icon.png'];
+const CACHE = 'zalo-lite-v2';
+const SHELL = ['/', '/app.js', '/boot.js', '/style.css', '/manifest.webmanifest', '/icons/icon-192.png', '/icons/apple-touch-icon.png'];
 
 self.addEventListener('install', e => {
   e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).then(() => self.skipWaiting()));
